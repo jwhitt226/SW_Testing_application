@@ -1,11 +1,4 @@
-def bmi_calculator():
-    # Get user input
-    print("Please enter your bodyweight in pounds:")
-    bodyweight = float(input())
-
-    print("Please enter your height in the following format: [feet] [inches]")
-    height = input()
-
+def bmi_calculator(bodyweight, height):
     # Conversions
     bodyweight_kg = bodyweight * 0.453592
 
@@ -30,19 +23,27 @@ def bmi_calculator():
         bmi_category = "Obese"
 
     # Print BMI & category
-    print(f"Your BMI is {bmi}, ({bmi_category})")
+    return(f"\n Your BMI is {bmi}, ({bmi_category}) \n")
 
 def main():
     choice = "1"
     
     while choice != "0":
-        print("2. Repeate Options")
+        print("Here are the options: \n")
         print("1. Calculate BMI")
-        print("0. Exit")
-        print("Please enter your choice: ")
+        print("2. Repeat Options")
+        print("0. Exit \n")
+        print("Please enter the number of your choice: ")
         choice = input()
         if choice == "1":
-            bmi_calculator()
+            
+            # Get user input
+            print("Please enter your bodyweight in pounds:")
+            bodyweight = float(input())
+            print("Please enter your height in the following format: [feet] [inches]")
+            height = input()
+            
+            print(bmi_calculator(bodyweight, height))
 
 
 if __name__ == "__main__":
